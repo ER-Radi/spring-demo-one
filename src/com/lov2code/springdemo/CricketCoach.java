@@ -4,6 +4,11 @@ public class CricketCoach implements Coach {
 
     private FortuneService fortuneService;
 
+    // add new fields for emailAddress and team
+    private String emailAddress;
+    private String team;
+
+
     // create a co-arg constructor
     public CricketCoach() {
         System.out.println("CricketCoach: inside no-arg constructor");
@@ -15,6 +20,16 @@ public class CricketCoach implements Coach {
         this.fortuneService = fortuneService;
     }
 
+    public void setEmailAddress(String emailAddress) {
+        System.out.println("CricketCoach: inside setter method - setEmailAddress");
+        this.emailAddress = emailAddress;
+    }
+
+    public void setTeam(String team) {
+        System.out.println("CricketCoach: inside setter method - setTeam");
+        this.team = team;
+    }
+
     @Override
     public String getDailyWorkout() {
         return "Practice fast bowling for 15 minutes";
@@ -23,5 +38,13 @@ public class CricketCoach implements Coach {
     @Override
     public String getDailyFortune() {
         return fortuneService.getFortune();
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public String getTeam() {
+        return team;
     }
 }
