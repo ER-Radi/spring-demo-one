@@ -13,15 +13,22 @@
 		  class="com.lov2code.springdemo.HappyFortuneService">
 	</bean>
 
+
     <!-- Define your beans here -->
 	<bean id="myCoach"
 		class="com.lov2code.springdemo.TrackCoach">
-
 
 		<!-- set up constructor injection -->
 		<constructor-arg ref="myFortuneService" />
 	</bean>
 
+
+	<bean id="myCricketCoach"
+		class="com.lov2code.springdemo.CricketCoach">
+
+		<!-- set up setter injection -->
+		<property name="fortuneService" ref="myFortuneService" />
+	</bean>
 
 
 
