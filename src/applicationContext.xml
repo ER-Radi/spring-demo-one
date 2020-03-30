@@ -16,6 +16,10 @@
     <!-- Define your beans here -->
 	<bean id="myCoach"
 		class="com.lov2code.springdemo.TrackCoach">
+
+
+		<!-- set up constructor injection -->
+		<constructor-arg ref="myFortuneService" />
 	</bean>
 
 
