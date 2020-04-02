@@ -15,14 +15,6 @@ public class TennisCoach implements Coach {
         System.out.println(">> TennisCoach: inside default constructor");
     }
 
-    // define a setter method
-    @Autowired
-    public void setFortuneService(FortuneService theFortuneService) {
-        System.out.println(">> TennisCoach: inside setFortuneService() method");
-        fortuneService = theFortuneService;
-    }
-
-
     /*
      *   As of Spring Framework 4.3, an @Autowired annotation on such a constructor is
      *   no longer necessary if the target bean defines only one constructor to begin with.
@@ -35,6 +27,22 @@ public class TennisCoach implements Coach {
         this.fortuneService = theFortuneService;
     }
     */
+
+
+    // define a setter method
+    /*
+    @Autowired
+    public void setFortuneService(FortuneService theFortuneService) {
+        System.out.println(">> TennisCoach: inside setFortuneService() method");
+        fortuneService = theFortuneService;
+    }
+    */
+
+    @Autowired
+    public void doSomeCrazyStuff(FortuneService theFortuneService) {
+        System.out.println(">> TennisCoach: inside doSomeCrazyStuff() method");
+        fortuneService = theFortuneService;
+    }
 
 
     @Override
