@@ -1,6 +1,7 @@
 package com.lov2code.springdemo_annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 
@@ -8,13 +9,15 @@ import org.springframework.stereotype.Component;
 public class TennisCoach implements Coach {
 
     /*
-     * Field Injection is done by using Java Reflection
+     * Field Injection is done by using Java Reflection.
+     * Qualifier: Tell Spring with Bean ID to use for the injection,
+     *            Can be applied to: Constructor injection, Setter injection methods, Field injection
      */
     @Autowired
+    @Qualifier("randomFortuneService")
     private FortuneService fortuneService;
 
     // define a default constructor
-
     public TennisCoach() {
         System.out.println(">> TennisCoach: inside default constructor");
     }
@@ -27,7 +30,7 @@ public class TennisCoach implements Coach {
      */
     /*
     @Autowired
-    public TennisCoach(FortuneService theFortuneService) {
+    public TennisCoach(@Qualifier("randomFortuneService") FortuneService theFortuneService) {
         this.fortuneService = theFortuneService;
     }
     */
