@@ -9,6 +9,19 @@ public class TennisCoach implements Coach {
 
     private FortuneService fortuneService;
 
+    // define a default constructor
+
+    public TennisCoach() {
+        System.out.println(">> TennisCoach: inside default constructor");
+    }
+
+    // define a setter method
+    @Autowired
+    public void setFortuneService(FortuneService theFortuneService) {
+        System.out.println(">> TennisCoach: inside setFortuneService() method");
+        fortuneService = theFortuneService;
+    }
+
 
     /*
      *   As of Spring Framework 4.3, an @Autowired annotation on such a constructor is
@@ -16,10 +29,12 @@ public class TennisCoach implements Coach {
      *   However, if several constructors are available, at least one must be annotated
      *   with @Autowired in order to instruct the container which one to use.
      */
+    /*
     @Autowired
     public TennisCoach(FortuneService theFortuneService) {
         this.fortuneService = theFortuneService;
     }
+    */
 
 
     @Override
